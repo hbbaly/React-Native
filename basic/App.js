@@ -3,6 +3,7 @@ import { Text, View } from 'react-native';
 import Props from './views/props/Props'
 import Greetings from './views/props/Greeting'
 import BlinkApp from './views/state/state'
+import StyleComponent from './views/sty/style'
 export default class App extends Component {
   render() {
     return (
@@ -11,6 +12,7 @@ export default class App extends Component {
           <Props />
           <Greetings />
           <BlinkApp />
+          <StyleComponent />
         </View>
     );
   }
