@@ -4,6 +4,7 @@ import Props from './views/props/Props'
 import Greetings from './views/props/Greeting'
 import BlinkApp from './views/state/state'
 import StyleComponent from './views/sty/style'
+import Press from './views/press/press'
 export default class App extends Component {
   render() {
     return (
@@ -13,6 +14,8 @@ export default class App extends Component {
           <Greetings />
           <BlinkApp />
           <StyleComponent />
+
+          <Press />
         </View>
     );
   }
