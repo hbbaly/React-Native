@@ -16,7 +16,7 @@ export default class FlatListBasics extends Component {
             {key: 'Jimmy'},
             {key: 'Julie'},
           ]}
-          renderItem={({item}) => <Text style={styles.item}>{item.key}</Text>}
+          renderItem={({item}) => <Text style={styles.item} key={item.key}>{item.key}</Text>}
         />
       </View>
     );

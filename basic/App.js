@@ -7,6 +7,8 @@ import StyleComponent from './views/sty/style'
 import Press from './views/press/press'
 import Scroll from './views/scroll/scroll'
 import FlatListBasics  from './views/scroll/FlatList'
+import SectionListDemo from './views/scroll/SectionList'
+import FetchDemo from './views/fetch/fetch'
 export default class App extends Component {
   render() {
     return (
@@ -19,6 +21,8 @@ export default class App extends Component {
           <Press />
           <Scroll />
           <FlatListBasics />
+          <SectionListDemo />
+          <FetchDemo />
         </ScrollView>
     );
   }
