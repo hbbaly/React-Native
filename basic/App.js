@@ -12,7 +12,7 @@ export default class App extends Component {
           <Text>Hello world!</Text>
           <Props />
           <Greetings />
-          <BlinkApp />
+          {/* <BlinkApp /> */}
           <StyleComponent />
 
           <Press />
