@@ -1,23 +1,25 @@
 import React, { Component } from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, ScrollView } from 'react-native';
 import Props from './views/props/Props'
 import Greetings from './views/props/Greeting'
-import BlinkApp from './views/state/state'
+// import BlinkApp from './views/state/state'
 import StyleComponent from './views/sty/style'
 import Press from './views/press/press'
 import Scroll from './views/scroll/scroll'
+import FlatListBasics  from './views/scroll/FlatList'
 export default class App extends Component {
   render() {
     return (
-        <View>
+        <ScrollView>
           <Text>Hello world!</Text>
           <Props />
-          <Greetings />
-          {/* <BlinkApp /> */}
+          <Greetings /> 
+          {/* <BlinkApp />*/}
           <StyleComponent />
           <Press />
           <Scroll />
-        </View>
+          <FlatListBasics />
+        </ScrollView>
     );
   }
 }
