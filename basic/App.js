@@ -10,6 +10,7 @@ import FlatListBasics  from './views/scroll/FlatList'
 import SectionListDemo from './views/scroll/SectionList'
 import FetchDemo from './views/fetch/fetch'
 import SplashScreen from 'react-native-splash-screen'
+import FadeInView from './views/animated/Animated'
 export default class App extends Component {
   componentDidMount() {
     SplashScreen.hide();
@@ -18,6 +19,9 @@ export default class App extends Component {
     return (
         <ScrollView>
           <Text>Hello world!</Text>
+          <FadeInView style={{width:'100%',height:50,backgroundColor:'blue'}}>
+            <Text>fade in</Text>
+          </FadeInView>
           <Props />
           <Greetings /> 
           {/* <BlinkApp />*/}
