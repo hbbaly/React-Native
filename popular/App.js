@@ -7,8 +7,8 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
-
+import {Platform, StyleSheet, Text, View,Image} from 'react-native';
+import TabNavigator from 'react-native-tab-navigator';
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
   android:
@@ -16,14 +16,40 @@ const instructions = Platform.select({
     'Shake or press menu button for dev menu',
 });
 
-type Props = {};
-export default class App extends Component<Props> {
+export default class App extends Component {
+  constructor(props){
+    super (props)
+      this.state = {
+        selectedTab:'home',
+        homeView:'homeView',
+        profileView:'profileView'
+      }
+  }
+
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>Welcome to React Native!</Text>
-        <Text style={styles.instructions}>To get started, edit App.js</Text>
-        <Text style={styles.instructions}>{instructions}</Text>
+       <TabNavigator>
+          <TabNavigator.Item
+            selected={this.state.selectedTab === 'home'}
+            title="首页"
+            selectedTitleStyle = {{color:'blue'}}
+            renderIcon={() => <Image style={styles.image} source={require('./res/images/ic_polular.png')} />}
+            renderSelectedIcon={() => <Image style={[styles.image,{tintColor:'blue'}]} source={require('./res/images/ic_polular.png')} />}
+            badgeText="1"
+            onPress={() => this.setState({ selectedTab: 'home' })}>
+            <Text>首页</Text>
+          </TabNavigator.Item>
+          <TabNavigator.Item
+            selected={this.state.selectedTab === 'profile'}
+            title="收藏"
+            renderIcon={() => <Image style={styles.image} source={require('./res/images/ic_star.png')} />}
+            renderSelectedIcon={() => <Image  style={[styles.image,{tintColor:'blue'}]}  source={require('./res/images/ic_star.png')} />}
+            // renderBadge={() => <CustomBadgeView />}
+            onPress={() => this.setState({ selectedTab: 'profile' })}>
+            <Text>收藏</Text>
+          </TabNavigator.Item>
+        </TabNavigator>
       </View>
     );
   }
@@ -32,18 +58,10 @@ export default class App extends Component<Props> {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
     backgroundColor: '#F5FCFF',
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+  image: {
+    width:22,
+    height:22,
+  }
 });
