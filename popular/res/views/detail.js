@@ -2,6 +2,20 @@ import React, { Component } from 'react';
 import { View, Text,Button } from 'react-native'
 // import { createStackNavigator, createAppContainer } from "react-navigation";
 class DetailsScreen extends React.Component {
+  // 在标题中 使用参数：
+  static navigationOptions = ({ navigation }) => {
+    console.log(navigation)
+    return {
+      title: navigation.getParam('id', 'A Nested Details Screen'),
+      headerStyle: {
+        backgroundColor: 'red',
+      },
+      headerTintColor: '#fff',
+      headerTitleStyle: {
+        fontWeight: 'bold'
+      },
+    };
+  };
   constructor (props){
     super(props)
     console.log(this.props.navigation.getParam('id'))   // hbb
@@ -21,17 +35,12 @@ class DetailsScreen extends React.Component {
           title="Go back"
           onPress={() => this.props.navigation.goBack()}
         />
+         <Button
+          title="Update the title"
+          onPress={() => this.props.navigation.setParams({id: 'hbbaly!'})}
+        />
       </View>
     );
   }
 }
-// const AppNavigator = createStackNavigator(
-//   {
-//     Home: HomeScreen,
-//     Details: DetailsScreen
-//   },
-//   {
-//     initialRouteName: "Home"
-//   }
-// );
 export default DetailsScreen

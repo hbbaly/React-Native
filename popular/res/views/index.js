@@ -3,6 +3,9 @@ import { View, Text,Button } from 'react-native'
 import { createStackNavigator, createAppContainer } from "react-navigation";
 
 class Index extends Component{
+  static navigationOptions = {
+    title: 'Index'
+  };
   constructor(props){
     super(props)
     this.state = {
