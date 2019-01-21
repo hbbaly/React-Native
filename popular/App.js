@@ -13,8 +13,10 @@ import Toast, {DURATION} from 'react-native-easy-toast';
 import HTMLView from 'react-native-htmlview';
 import HomeScreen  from './res/views/index'
 import DetailsScreen from './res/views/detail'
+import ModalScreen from './res/views/modalScreen'
 import { createStackNavigator, createAppContainer } from "react-navigation";
-const AppNavigator = createStackNavigator(
+
+const MainStack = createStackNavigator(
   {
     Home: HomeScreen,
     Details: DetailsScreen
@@ -31,10 +33,25 @@ const AppNavigator = createStackNavigator(
       },
     }
   },
-  
 );
 
-const AppContainer = createAppContainer(AppNavigator);
+const RootStack = createStackNavigator(
+  {
+    Main: {
+      screen: MainStack,
+    },
+    MyModal: {
+      screen: ModalScreen,
+    },
+  },
+  {
+    initialRouteName:'Main',
+    mode: 'modal',
+    headerMode: 'none',
+  }
+);
+
+const AppContainer = createAppContainer(RootStack);
 class App extends Component {
   // constructor(props){
   //   super (props)
