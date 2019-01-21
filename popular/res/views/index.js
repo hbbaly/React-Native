@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { View, Text,Button } from 'react-native'
-import { createStackNavigator, createAppContainer } from "react-navigation";
-
+import {  ActivityIndicator,
+  AsyncStorage,
+  StatusBar,
+  StyleSheet,View, Text,Button } from 'react-native'
 class Index extends Component{
   static navigationOptions = ({navigation}) => {
     return {
@@ -25,10 +26,18 @@ class Index extends Component{
       num:0
     }
     console.log(this.props)
+    this._bootstrapAsync();
   }
   componentDidMount () {
     this.props.navigation.setParams({ increaseCount: this.count })
   }
+  _bootstrapAsync = async () => {
+    const userToken = await AsyncStorage.getItem('userToken');
+    console.log(userToken,'hbb')
+    // This will switch to the App screen or Auth screen and this loading
+    // screen will be unmounted and thrown away.
+    this.props.navigation.navigate(userToken ? 'Home' : 'Singin');
+  };
   count () {
     this.setState({
       num:this.state.num++
@@ -37,6 +46,8 @@ class Index extends Component{
   render () {
     return (
       <View>
+        <ActivityIndicator />
+        <StatusBar barStyle="default" />
         <Text>{this.state.text}</Text>
         <Text>{this.state.num}</Text>
         <Button

@@ -14,12 +14,14 @@ import HTMLView from 'react-native-htmlview';
 import HomeScreen  from './res/views/index'
 import DetailsScreen from './res/views/detail'
 import ModalScreen from './res/views/modalScreen'
-import { createStackNavigator, createAppContainer } from "react-navigation";
+import Singin from './res/views/singin'
+import { createStackNavigator, createAppContainer, createSwitchNavigator } from "react-navigation";
 
 const MainStack = createStackNavigator(
   {
     Home: HomeScreen,
-    Details: DetailsScreen
+    Details: DetailsScreen,
+    Singin:Singin
   },
   {
     initialRouteName: "Home",
