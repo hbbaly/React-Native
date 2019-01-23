@@ -8,7 +8,7 @@ export default class Index extends Component{
     const { navigation } = this.props
     return (
       <View>
-        <Button title='go Detail' onPress={() => {navigation.navigate('Detail')}} />
+        <Button title='go Detail' onPress={() => {navigation.navigate('Detail',{id:'hbb'})}} />
       </View>
     )
   }

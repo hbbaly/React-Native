@@ -4,11 +4,15 @@ import Detail from '../views/details'
 const appContainer = createStackNavigator(
   { 
     Home:{ 
-      screen: Index
+      screen: Index,
+
     },
     Detail:{ 
       screen: Detail
     }
+  },
+  {
+    initialRouteName: "Home"
   }
 )
 
