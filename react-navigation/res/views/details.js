@@ -6,7 +6,6 @@ export default class Detail extends Component {
   }
   render () {
     const { navigation } = this.props
-    console.log(navigation)
     const id = navigation.getParam('id','no id')
     return (
       <View>

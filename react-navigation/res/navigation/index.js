@@ -5,10 +5,31 @@ const appContainer = createStackNavigator(
   { 
     Home:{ 
       screen: Index,
-
+      navigationOptions:{
+        title: 'Index',
+        headerStyle: {
+          backgroundColor: '#f4511e',
+        },
+        headerTintColor: '#fff',
+        headerTitleStyle: {
+          textAlign: 'center',
+        }
+      }
     },
     Detail:{ 
-      screen: Detail
+      screen: Detail,
+      navigationOptions: ({navigation}) => {
+        return {
+          title: navigation.getParam('id','Detail'),
+          headerStyle: {
+            backgroundColor: 'blue',
+          },
+          headerTintColor: '#fff',
+          headerTitleStyle: {
+            textAlign: 'center',
+          }
+        }
+      }
     }
   },
   {
