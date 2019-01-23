@@ -1,5 +1,5 @@
 import  React, {Component} from 'react'
-import { View, Text, Button } from 'react-native'
+import { View, Text, Button, TextInput } from 'react-native'
 export default class Detail extends Component {
   constructor (props) {
     super (props)
@@ -11,6 +11,10 @@ export default class Detail extends Component {
       <View>
         <Text>{id}</Text>
         <Button title='go back' onPress={() => {navigation.goBack()}} />
+        <TextInput style={{width:400,height:50,borderWidth:1,borderColor:'#ccc'}} onChangeText={text => {
+          navigation.setParams({id:text})
+          }
+        } />
       </View>
     )
   }
