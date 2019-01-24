@@ -9,6 +9,7 @@ export default class Index extends Component{
     return (
       <View>
         <Button title='go Detail' onPress={() => {navigation.navigate('Detail',{id:'hbb'})}} />
+        <Button title='go Detail' onPress={() => {navigation.navigate('NavTab',{id:'hbb'})}} />
       </View>
     )
   }

@@ -1,8 +1,9 @@
 import React from 'react'
-import { Button } from 'react-native'
+import { Button, View, Text } from 'react-native'
 import { createStackNavigator, createAppContainer } from 'react-navigation'
 import Index from '../views/index'
 import Detail from '../views/details'
+import TabNavigator from '../views/tabbar'
 const appContainer = createStackNavigator(
   { 
     Home:{
@@ -33,6 +34,21 @@ const appContainer = createStackNavigator(
           title: navigation.getParam('id','Detail'),
           headerStyle: {
             backgroundColor: 'blue',
+          },
+          headerTintColor: '#fff',
+          headerTitleStyle: {
+            textAlign: 'center',
+          }
+        }
+      }
+    },
+    NavTab:{
+      screen:TabNavigator,
+      navigationOptions: ({navigation}) => {
+        return {
+          title: 'TabNavigator',
+          headerStyle: {
+            backgroundColor: 'red',
           },
           headerTintColor: '#fff',
           headerTitleStyle: {
