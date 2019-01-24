@@ -4,6 +4,7 @@ import { createStackNavigator, createAppContainer } from 'react-navigation'
 import Index from '../views/index'
 import Detail from '../views/details'
 import TabNavigator from '../views/tabbar'
+import MyDrawerNavigator from '../views/drawernav'
 const appContainer = createStackNavigator(
   { 
     Home:{
@@ -47,6 +48,21 @@ const appContainer = createStackNavigator(
       navigationOptions: ({navigation}) => {
         return {
           title: 'TabNavigator',
+          headerStyle: {
+            backgroundColor: 'red',
+          },
+          headerTintColor: '#fff',
+          headerTitleStyle: {
+            textAlign: 'center',
+          }
+        }
+      }
+    },
+    DrawerNav:{
+      screen:MyDrawerNavigator,
+      navigationOptions: ({navigation}) => {
+        return {
+          title: 'MyDrawerNavigator',
           headerStyle: {
             backgroundColor: 'red',
           },
