@@ -6,6 +6,7 @@ import Detail from '../views/details'
 import FlatListDemo from '../views/faltlist'
 import TabNavigator from '../views/tabbar'
 import MyDrawerNavigator from '../views/drawernav'
+import SwipeableFlatList from '../views/swipeableFlatList'
 const appContainer = createStackNavigator(
   { 
     Home:{
@@ -80,6 +81,12 @@ const appContainer = createStackNavigator(
         return {
           title: 'FlatListDemo',
         }
+      }
+    },
+    SwipeableFlatList:{
+      screen:SwipeableFlatList,
+      navigationOptions:{
+        title:'SwipeableFlatList'
       }
     }
   },
