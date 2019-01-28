@@ -52,7 +52,7 @@ export default class FlatListDemo extends Component {
               refreshing={this.state.pullDown}
               onRefresh = {() =>{
                 this._pullDown()
-              }} 
+              }}
             />
           }
           ListFooterComponent = {

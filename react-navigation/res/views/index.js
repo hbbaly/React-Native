@@ -13,6 +13,7 @@ export default class Index extends Component{
         <Button style={{marginTop:20}} title='go DrawerNav' onPress={() => {navigation.navigate('DrawerNav')}} />
         <Button style={{marginTop:20}} title='go FlatList' onPress={() => {navigation.navigate('FlatList')}} />
         <Button style={{marginTop:20}} title='go SwipeableFlatList' onPress={() => {navigation.navigate('SwipeableFlatList')}} />
+        <Button style={{marginTop:20}} title='go ListView' onPress={() => {navigation.navigate('ListView')}} />
       </View>
     )
   }
