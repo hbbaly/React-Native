@@ -25,6 +25,19 @@ export default class FlatListDemo extends Component {
       })
     }, 2000)
   }
+  _pullup () {
+    return <View style={styles.pullup}>
+      <ActivityIndicator size={'large'} color={'red'} animate={true} />
+      <Text>加载更多</Text>
+    </View>
+  }
+  _pullupMore () {
+    setTimeout(() => {
+      this.setState({
+        dataList:this.state.dataList.concat([0,0,0]),
+      })
+    },2000)
+  }
   render () {
     return (
       <View>
@@ -42,7 +55,10 @@ export default class FlatListDemo extends Component {
               }} 
             />
           }
-         
+          ListFooterComponent = {
+            this._pullup
+          }
+          onEndReached = {() => {this._pullupMore()}}
         />
       </View>
     )
@@ -64,5 +80,9 @@ const styles = StyleSheet.create({
   itemText:{
     color:'#fff',
     fontSize:28,
+  },
+  pullup: {
+    alignItems:'center', 
+    justifyContent: 'center',
   }
 })
