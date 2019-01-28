@@ -11,6 +11,7 @@ export default class Index extends Component{
         <Button title='go Detail' onPress={() => {navigation.navigate('Detail',{id:'hbb'})}} />
         <Button style={{marginTop:20}} title='go Detail' onPress={() => {navigation.navigate('NavTab')}} />
         <Button style={{marginTop:20}} title='go DrawerNav' onPress={() => {navigation.navigate('DrawerNav')}} />
+        <Button style={{marginTop:20}} title='go FlatList' onPress={() => {navigation.navigate('FlatList')}} />
       </View>
     )
   }

@@ -3,6 +3,7 @@ import { Button, View, Text } from 'react-native'
 import { createStackNavigator, createAppContainer } from 'react-navigation'
 import Index from '../views/index'
 import Detail from '../views/details'
+import FlatListDemo from '../views/faltlist'
 import TabNavigator from '../views/tabbar'
 import MyDrawerNavigator from '../views/drawernav'
 const appContainer = createStackNavigator(
@@ -70,6 +71,14 @@ const appContainer = createStackNavigator(
           headerTitleStyle: {
             textAlign: 'center',
           }
+        }
+      }
+    },
+    FlatList:{
+      screen:FlatListDemo,
+      navigationOptions: ({navigation}) => {
+        return {
+          title: 'FlatListDemo',
         }
       }
     }
