@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, FlatList, StyleSheet, ActivityIndicator } from 'react-native'
+import { View, Text, FlatList, StyleSheet, ActivityIndicator, RefreshControl } from 'react-native'
 const List = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]
 export default class FlatListDemo extends Component {
   constructor (props) {
@@ -31,10 +31,18 @@ export default class FlatListDemo extends Component {
         <FlatList
           data={this.state.dataList}
           renderItem={(list) => this._list(list)}
-          refreshing={this.state.pullDown}
-          onRefresh = {() =>{
-            this._pullDown()
-          }}
+          refreshControl = {
+            <RefreshControl 
+              title={'loading'}
+              titleColor={'red'}
+              colors={['red']}  
+              refreshing={this.state.pullDown}
+              onRefresh = {() =>{
+                this._pullDown()
+              }} 
+            />
+          }
+         
         />
       </View>
     )
